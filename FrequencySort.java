@@ -45,8 +45,17 @@ public class FrequencySort {
 
 			@Override
 			public int compare(Entry<K, V> o1, Entry<K, V> o2) {
-
-				return o2.getValue().compareTo(o1.getValue());
+				int temp = o2.getValue().compareTo(o1.getValue());
+				
+				if (temp == 0){
+					// throw exception
+					System.out.println("Same frequency");
+				}
+			
+					return temp;
+				
+					
+				
 			}
 
 		});
@@ -60,7 +69,7 @@ public class FrequencySort {
 	}
 
 	public static void main(String[] args) {
-		int[] arr = { 4, 5, 6, 7, 8, 4, 4, 4, 4, 4, 5 };
+		int[] arr = { 4, 5, 6, 7, 8, 4, 5, 4, 5 };
 		
 		sortByFrequency(arr);
 		
